@@ -104,6 +104,7 @@ Select all the columns for the user ID equal to 4.
 
 	SELECT *
 	FROM users
-	WheRE userid = 4;
+	WheRE userid = 4; 
+	
 
 
