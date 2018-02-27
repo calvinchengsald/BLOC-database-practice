@@ -1,0 +1,109 @@
+
+Module 3.4.1
+Database Introduction
+
+
+values
+value
+A Clockwork Orange
+42
+09/02/1945
+98.7
+15.99
+
+payments
+date	payee	amount	memo
+5/1/2016	West Hill Apartments	1500.00	Rent
+5/10/2016	Best Toy Store	37.00	Beanie Babies
+5/15/2016	Mega Foods	124.93	Groceries
+5/23/2016	Shoes R Cool	54.72	Athletic shoes
+
+users
+userid	name	email	signup
+1	Aleesia Algorithm	aleesia.algorithm@uw.edu	2014-10-24
+2	DeAndre Data	datad@comcast.net	2008-01-20
+3	Chris Collection	chris.collection@outlook.com	2012-01-20
+4	Brandy Boolean	bboolean@nasa.gov	1999-10-15
+
+1. Given the values table below, what data types do each of these values represent?
+
+A Clockwork Orange - String
+42 - Integer
+09/02/1945 - Object (Or just a string)
+98.7 - Float
+15.99 - Float
+
+2. Explain when a database would be used. Explain when a text file would be used.
+
+If the data needs to be carried onto multiple machines, not just at one location/user, 
+then a database should be used. If the program is only used locally on one machine, then a
+ text file should be fine.
+
+3. Describe one difference between SQL and other programming languages.
+
+SQL is almost like english, kind of human readable. Other languages are harder to understand. 
+SQL doesn't provide instructions to create/deploy things, but rather is used to retrieve information.
+
+4. In your own words, explain how the pieces of a database system fit together at a high level.
+
+The user will interact with a GUI, made with React. The react use SQL to manipulate a database that 
+will store information that the user needs.
+
+5. Explain the meaning of table, row, column, and value.
+
+Table - the whole table that contains a matrix of information about something in particular.
+Row - a row of the table that contains all the attributes associated with a particular entry
+Column - an attribute that an entry may have.
+Value - the actual value of an attribute belonging to a certain entry
+
+6. List three data types that can be used in a table.
+
+String - store standard information such as name, address...
+Object - store more complex information like user profiles or whatever is needed
+Integer - store basic numbers, can be an attribute of something.
+
+7. Given the payments table below, provide a description in english and the results of the following queries:
+
+     SELECT date, amount
+     FROM payments;
+     
+     // Will return a table with the columns date and amount. In this case, all 4 rows would be returned
+
+     SELECT amount
+     FROM payments
+     WHERE amount > 500;
+     
+     // Will return a table with just one column, amount, whose value is over 500
+     // In this case, just the first amount will be displayed: 1500
+
+     SELECT *
+     FROM payments
+     WHERE payee = "Mega Foods";
+     
+     // Will return a table with all the existing columns and rows where the payee is Mega Foods
+     // In this case only one row will be in the table, with all columns there.
+     
+   
+8. Given the users table below, write the following SQL queries and their results:
+
+Select the email and sign-up date for the user named DeAndre Data.
+	
+	SELECT email, signup
+	FROM users
+	WHERE name = 'DeAndre Data';
+
+
+Select the user ID for the user with email 'aleesia.algorithm@uw.edu'.
+
+	SELECT userid
+	FROM users
+	WHERE email= 'aleesia.algorithm@uw.edu';
+
+
+Select all the columns for the user ID equal to 4.  
+
+	SELECT *
+	FROM users
+	WheRE userid = 4;
+
+
